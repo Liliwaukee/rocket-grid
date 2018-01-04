@@ -1,0 +1,129 @@
+img {
+  border-radius: 50%;
+  display: block;
+  margin: 45px auto;
+  width: 60%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 60px 480px repeat(3, 500px) 100px;
+    grid-template-areas:
+        "nav nav"
+        "header header"
+        "text1 image1"
+        "image2 text2"
+        "text3 image3"
+        "footer footer";
+}
+
+
+
+nav {
+  background-color: #343A40;
+  color: white;
+  padding: 0 10%;
+  grid-area: nav;
+}
+
+nav ul, nav li {
+  display: inline-block;
+}
+
+nav li {
+  text-decoration: none;
+}
+
+header {
+  background:linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.6)), url("../img/header.jpg");
+  background-size: cover;
+  color: white;
+  text-align: center;
+  grid-area: header;
+}
+
+header h1 {
+  color: white;
+  font-size: 80px;
+  font-weight: 300;
+  margin: 0;
+  z-index: 100;
+}
+
+header p {
+  font-size: 45px;
+  font-weight: 300;
+  margin: 0;
+}
+
+.text1 {
+  grid-area: text1;
+}
+
+.image1 {
+  grid-area: image1;
+}
+
+.text2 {
+  grid-area: text2;
+}
+
+.image2 {
+  grid-area: image2;
+  justify-content: right;
+}
+
+.text3 {
+  grid-area: text3;
+}
+
+.image3 {
+  grid-area: image3;
+}
+
+
+div[class^='text']{
+  padding: 100px;
+}
+
+
+
+
+footer {
+  background-color: #343A40;
+  color: white;
+  grid-area: footer;
+  text-align: center;
+}
+
+@media all and (max-width: 768px) {
+  body {
+    grid-template-columns: 100%;
+    grid-template-rows: 40px 480px 250px 340px 340px 250px 250px 340px 90px;
+    grid-template-areas:
+        "nav"
+        "header"
+        "text1"
+        "image1"
+        "image2"
+        "text2"
+        "text3"
+        "image3"
+        "footer";
+  }
+
+  div[class^='text']{
+    padding: 30px;
+  }
+
+  img {
+    margin: 15px auto;
+    width: 52%;
+  }
+
+};
